@@ -1,0 +1,54 @@
+/* Partner Logos Row */
+.partners-section {
+  padding: 30px 0 50px 0;
+  text-align: center;
+}
+
+.partners-heading {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+  letter-spacing: 0.01em;
+}
+
+.partners-logos-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  opacity: 0.65;
+  transition: opacity var(--transition-normal);
+}
+
+.partners-logos-row:hover {
+  opacity: 0.9;
+}
+
+.partner-logo-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #374151;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.highlevel-icon {
+  display: flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 16px;
+}
+
+.hl-bar {
+  width: 3.5px;
+  background-color: currentColor;
+  border-radius: 1px;
+}
+
+.hl-bar.b1 { height: 10px; }
+.hl-bar.b2 { height: 16px; }
+.hl-bar.b3 { height: 13px; }

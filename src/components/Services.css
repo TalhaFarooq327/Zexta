@@ -1,0 +1,453 @@
+/* Services Bento Grid */
+.services-section {
+  padding: 50px 0 70px 0;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  grid-template-rows: auto auto auto;
+  gap: 24px;
+}
+
+.bento-card {
+  padding: 32px 30px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bento-title {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--text-heading);
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+
+.bento-desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  max-width: 480px;
+}
+
+/* Card 1: Cold Email (Tall Left) */
+.card-cold-email {
+  grid-row: span 2;
+  justify-content: space-between;
+}
+
+.envelope-visual-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.envelope-relative-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.envelope-img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  transition: transform var(--transition-normal);
+}
+
+.card-cold-email:hover .envelope-img {
+  transform: translateY(-4px);
+}
+
+/* Card 2: Lead Gen (Top Right) */
+.card-lead-gen {
+  min-height: 290px;
+}
+
+.leadgen-visual-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.mini-chart-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  width: 160px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.mini-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.mini-chart-amount {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.mini-chart-pill {
+  font-size: 10px;
+  color: var(--text-muted);
+  border: 1px solid var(--border-light);
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+
+.mini-chart-bars {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 60px;
+  gap: 5px;
+}
+
+.bar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.bar-col span {
+  width: 100%;
+  background-color: var(--brand-primary);
+  border-radius: 2px 2px 0 0;
+}
+
+.bar-col label {
+  font-size: 8.5px;
+  color: var(--text-muted);
+}
+
+.connecting-curve {
+  width: 70px;
+  height: 60px;
+}
+
+.tools-progress-stack {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tool-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 9px 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.tool-logo-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+.clay-bg { background-color: #e0f2fe; color: #0284c7; }
+.modash-bg { background-color: #fce7f3; color: #db2777; }
+.apollo-bg { background-color: #fef08a; color: #ca8a04; }
+
+.tool-info {
+  flex: 1;
+}
+
+.tool-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.tool-growth {
+  font-size: 10.5px;
+  background-color: #eff6ff;
+  color: #2563eb;
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+}
+
+.tool-progress-track {
+  width: 100%;
+  height: 5px;
+  background-color: #e5e7eb;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.tool-progress-bar {
+  height: 100%;
+  background-color: #cbd5e1;
+  border-radius: var(--radius-full);
+}
+
+/* Card 3: Meta & Google Ads */
+.card-meta-ads {
+  min-height: 270px;
+}
+
+.ads-diagram-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.ads-top-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ad-platform-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.leads-capture-node {
+  background-color: var(--brand-primary);
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 0 0 4px rgba(21, 60, 51, 0.12);
+}
+
+.sparkle-icon {
+  color: #a7f3d0;
+}
+
+.ads-connect-lines {
+  display: flex;
+  justify-content: space-between;
+  width: 160px;
+  height: 20px;
+  border-bottom: 1.5px solid #d1d5db;
+  position: relative;
+  margin: 6px 0;
+}
+
+.ads-bottom-results {
+  display: flex;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.result-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* Card 4: Marketing Automation (Bottom Left) */
+.card-automation {
+  grid-column: 1 / 2;
+}
+
+.automation-preview-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.ghl-box, .integrations-box {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 14px;
+}
+
+.ghl-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.ghl-icon {
+  width: 28px;
+  height: 28px;
+  background-color: var(--brand-primary);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.ghl-bar {
+  width: 3px;
+  height: 12px;
+  background-color: #ffffff;
+  border-radius: 1px;
+}
+
+.ghl-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.ghl-sub {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.ghl-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ghl-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-heading);
+}
+
+.int-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.int-desc {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.int-tabs {
+  display: flex;
+  gap: 6px;
+}
+
+.int-tab {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background-color: #f3f4f6;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.int-tab.active {
+  background-color: var(--brand-primary);
+  color: #ffffff;
+}
+
+/* Card 5: Influencer Sourcing (Bottom Right) */
+.card-influencer {
+  grid-column: 2 / 3;
+}
+
+.influencer-visual-wrap {
+  position: relative;
+  height: 120px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.creator-profile-float {
+  position: absolute;
+  top: 0;
+  left: 35%;
+  z-index: 2;
+}
+
+.creator-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.float-badge {
+  position: absolute;
+  z-index: 3;
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.search-badge {
+  bottom: 14px;
+  left: 15%;
+}
+
+.collabs-badge {
+  top: 15px;
+  right: 15%;
+}
+
+.influencer-trend-line {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 950px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .card-cold-email, .card-automation, .card-influencer {
+    grid-column: 1 / -1;
+  }
+}

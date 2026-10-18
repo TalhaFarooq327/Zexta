@@ -1,0 +1,88 @@
+/* Upwork Section ("Hire Us ON Upwork") */
+.upwork-section {
+  padding: 60px 0 70px 0;
+}
+
+.upwork-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.upwork-card {
+  padding: 30px 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.upwork-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.upwork-service-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.upwork-brand-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--brand-primary);
+  font-family: serif;
+}
+
+.upwork-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--brand-badge-bg);
+  color: var(--brand-badge-text);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 11.5px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  width: fit-content;
+}
+
+.upwork-card-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 10px;
+}
+
+.upwork-card-desc {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.upwork-btn {
+  width: 100%;
+  font-size: 13.5px;
+  padding: 11px 18px;
+}
+
+@media (max-width: 900px) {
+  .upwork-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

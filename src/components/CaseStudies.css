@@ -1,0 +1,78 @@
+/* Case Studies ("Our Work") */
+.work-section {
+  padding: 60px 0 70px 0;
+}
+
+.work-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.work-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.case-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-card:hover {
+  transform: translateY(-4px);
+}
+
+.case-img-container {
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+  background-color: #e5ede7;
+}
+
+.case-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.case-card:hover .case-img {
+  transform: scale(1.03);
+}
+
+.case-content {
+  padding: 22px 24px;
+}
+
+.case-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.case-tag-pill {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.case-title {
+  font-size: 18.5px;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+@media (max-width: 768px) {
+  .work-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .work-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

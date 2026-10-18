@@ -1,0 +1,121 @@
+/* Process Timeline ("Our Process") */
+.process-section {
+  padding: 60px 0 80px 0;
+}
+
+.process-split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 50px;
+}
+
+.process-left-sticky {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.process-right-timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-step-row {
+  display: flex;
+  gap: 24px;
+  position: relative;
+  cursor: pointer;
+  padding-bottom: 36px;
+}
+
+.timeline-step-row:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-marker-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.step-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-light);
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all var(--transition-normal);
+  z-index: 2;
+}
+
+.step-active .step-circle {
+  background-color: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(21, 60, 51, 0.12);
+}
+
+.step-connector-line {
+  width: 2px;
+  flex: 1;
+  background-color: #d8e2dc;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.step-content-box {
+  flex: 1;
+  padding-top: 4px;
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.step-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-heading);
+  transition: color var(--transition-fast);
+}
+
+.step-arrow {
+  color: var(--brand-primary);
+  opacity: 0.6;
+  transition: all var(--transition-fast);
+}
+
+.step-active .step-title {
+  color: var(--brand-primary);
+}
+
+.step-active .step-arrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+.step-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .process-split-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .process-left-sticky {
+    position: static;
+  }
+}
