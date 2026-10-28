@@ -3,12 +3,10 @@
   padding: 60px 0 70px 0;
 }
 
-.work-header {
+.work-bottom-cta {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 40px;
-  gap: 20px;
+  justify-content: center;
+  margin-top: 36px;
 }
 
 .work-cards-grid {
@@ -68,10 +66,6 @@
 }
 
 @media (max-width: 768px) {
-  .work-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
   .work-cards-grid {
     grid-template-columns: 1fr;
   }

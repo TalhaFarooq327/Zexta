@@ -3,16 +3,9 @@
   padding: 60px 0 80px 0;
 }
 
-.process-split-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 50px;
-}
-
-.process-left-sticky {
-  position: sticky;
-  top: 100px;
-  height: fit-content;
+.process-timeline-wrap {
+  max-width: 780px;
+  margin: 0 auto;
 }
 
 .process-right-timeline {
@@ -111,11 +104,7 @@
 }
 
 @media (max-width: 768px) {
-  .process-split-layout {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  .process-left-sticky {
-    position: static;
+  .process-timeline-wrap {
+    width: 100%;
   }
 }

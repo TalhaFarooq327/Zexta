@@ -24,7 +24,7 @@ export default function App() {
       <div className="hero-master-wrap">
         <Hero />
         <HeroShowcase />
-        <PartnerLogos />
+
       </div>
 
       <main>
@@ -33,6 +33,7 @@ export default function App() {
 
         {/* 6. Services Bento Grid */}
         <Services />
+        <PartnerLogos />
 
         {/* 7. Case Studies / Our Work */}
         <CaseStudies />

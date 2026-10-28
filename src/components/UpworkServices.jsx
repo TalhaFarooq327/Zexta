@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArrowUpRight, Mail, GitFork, Star } from 'lucide-react'
+import { ArrowUpRight, Mail, GitFork, Star, Code2 } from 'lucide-react'
 import SectionBadge from './SectionBadge'
 import './UpworkServices.css'
 
@@ -21,6 +21,19 @@ const upworkCards = [
     id: 2,
     icon: (
       <div className="upwork-service-icon">
+        <Code2 size={22} color="#153c33" />
+      </div>
+    ),
+    badge: '★ Top Rated, 100% Job Success',
+    title: 'Web & App Development',
+    description: 'High-converting React, Next.js, Webflow, and Shopify websites engineered for speed, SEO, and lead capture.',
+    buttonText: 'View Web Dev Profile',
+    url: '#upwork-web-dev'
+  },
+  {
+    id: 3,
+    icon: (
+      <div className="upwork-service-icon">
         <GitFork size={22} color="#153c33" />
       </div>
     ),
@@ -31,7 +44,7 @@ const upworkCards = [
     url: '#upwork-automation'
   },
   {
-    id: 3,
+    id: 4,
     icon: (
       <div className="upwork-service-icon">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="#153c33">

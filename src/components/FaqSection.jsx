@@ -7,7 +7,7 @@ const faqItems = [
   {
     id: 1,
     question: 'What services does your agency offer?',
-    answer: 'We offer cold email outreach, lead generation, list building, Meta and Facebook ads, marketing automation, and influencer outreach.'
+    answer: 'We provide end-to-end digital growth: custom Web Development & high-converting landing pages (React, Next.js, Webflow, Shopify), cold email outreach systems, targeted B2B lead lists, Meta & Google ads, and marketing automation.'
   },
   {
     id: 2,
@@ -21,23 +21,28 @@ const faqItems = [
   },
   {
     id: 4,
+    question: 'Do you design and develop custom websites and landing pages?',
+    answer: 'Yes! We design and engineer ultra-fast, high-converting websites and landing pages using React, Next.js, Webflow, Shopify, and Tailwind CSS. Every page is built with mobile responsiveness, SEO optimization, and conversion-focused UX architecture.'
+  },
+  {
+    id: 5,
     question: 'Will my emails land in spam?',
     answer: 'Never. We deploy dedicated secondary sending domains, authenticate with SPF, DKIM, DMARC, and custom tracking domains, followed by a thorough 3-week automated warmup.'
   },
   {
-    id: 5,
+    id: 6,
     question: 'Do you provide the leads?',
     answer: 'Yes! We build highly customized, double-verified lead lists matched to your Ideal Customer Profile (ICP) using Clay, Apollo, LinkedIn, and proprietary scraping workflows.'
   },
   {
-    id: 6,
+    id: 7,
     question: 'Do I need to sign a long contract?',
     answer: 'No long lock-ins. We recommend a 90-day launch window to reach peak predictable cadence, after which agreements transition into rolling month-to-month terms.'
   },
   {
-    id: 7,
-    question: 'Which tools do you use?',
-    answer: 'We rely on industry standard tools including Clay, GoHighLevel, Meta Ads, Instantly, Smartlead, Apollo, Klaviyo, and Zapier/Make for end-to-end automation.'
+    id: 8,
+    question: 'Which tools and technologies do you use?',
+    answer: 'For development, we build with React, Next.js, Webflow, Shopify, TypeScript, and Tailwind CSS. For growth & outreach, we rely on Clay, GoHighLevel, Meta Ads, Instantly, Smartlead, Apollo, and Klaviyo.'
   }
 ]
 
@@ -51,37 +56,24 @@ export default function FaqSection() {
   return (
     <section className="faq-section" id="faq">
       <div className="container">
-        <div className="faq-split-layout">
-          {/* Left Column: Heading & Support Box */}
-          <div className="faq-left-column">
-            <SectionBadge text="FAQ" />
-            <h2 className="section-title">
-              Have questions,
-              <br />
-              We got answers.
-            </h2>
-            <p className="section-desc">
-              Everything you need to know before we start working together.
-            </p>
+        {/* Centered Section Header */}
+        <div className="section-header-center">
+          <SectionBadge text="FAQ" />
+          <h2 className="section-title">
+            Have questions,
+            <br />
+            We got answers.
+          </h2>
+          <p className="section-desc">
+            Everything you need to know before we start working together.
+          </p>
+        </div>
 
-            {/* Help Card */}
-            <div className="faq-support-card card-base">
-              <h4 className="support-card-title">Can't find your answer?</h4>
-              <p className="support-card-text">
-                Get in touch with our support team, they are friendly.
-              </p>
-              <a href="#contact" className="btn btn-secondary support-card-btn">
-                <span>Contact Us</span>
-                <ArrowUpRight size={14} />
-              </a>
-            </div>
-          </div>
-
-          {/* Right Column: Accordion */}
-          <div className="faq-right-column">
-            <div className="accordion-list">
-              {faqItems.map((item) => {
-                const isOpen = openId === item.id
+        {/* FAQ Content */}
+        <div className="faq-container-centered">
+          <div className="accordion-list">
+            {faqItems.map((item) => {
+              const isOpen = openId === item.id
                 return (
                   <div key={item.id} className={`accordion-item ${isOpen ? 'open' : ''}`}>
                     <button
@@ -103,6 +95,19 @@ export default function FaqSection() {
                 )
               })}
             </div>
+
+          {/* Help Card */}
+          <div className="faq-support-card card-base">
+            <div className="support-card-text-col">
+              <h4 className="support-card-title">Can't find your answer?</h4>
+              <p className="support-card-text">
+                Get in touch with our support team, they are friendly.
+              </p>
+            </div>
+            <a href="#contact" className="btn btn-secondary support-card-btn">
+              <span>Contact Us</span>
+              <ArrowUpRight size={14} />
+            </a>
           </div>
         </div>
       </div>

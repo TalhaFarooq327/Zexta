@@ -73,45 +73,81 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  margin-top: 24px;
+  gap: 12px;
+  margin-top: 22px;
 }
 
+/* Modern Enriched Pipeline Mini Chart */
 .mini-chart-card {
-  background-color: #ffffff;
+  background: #ffffff;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
-  padding: 14px;
-  width: 160px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  padding: 14px 14px 12px 14px;
+  width: 184px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  position: relative;
+  flex-shrink: 0;
 }
 
 .mini-chart-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.mini-chart-title-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.mini-chart-eyebrow {
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
 }
 
 .mini-chart-amount {
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 16.5px;
+  font-weight: 800;
   color: var(--text-heading);
+  letter-spacing: -0.02em;
 }
 
-.mini-chart-pill {
+.mini-chart-growth-tag {
   font-size: 10px;
-  color: var(--text-muted);
-  border: 1px solid var(--border-light);
-  padding: 1px 4px;
-  border-radius: 4px;
+  font-weight: 700;
+  color: #047857;
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+}
+
+.mini-chart-visual {
+  position: relative;
+  height: 70px;
+  margin-top: 6px;
+}
+
+.mini-chart-trend-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 55px;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .mini-chart-bars {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  height: 60px;
+  height: 100%;
   gap: 5px;
 }
 
@@ -123,164 +159,340 @@
   flex: 1;
   height: 100%;
   justify-content: flex-end;
+  position: relative;
+}
+
+.bar-track {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: flex-end;
 }
 
 .bar-col span {
   width: 100%;
-  background-color: var(--brand-primary);
-  border-radius: 2px 2px 0 0;
+  background: linear-gradient(180deg, #1b4d42 0%, #153c33 100%);
+  border-radius: 3px 3px 0 0;
+  transition: all 0.25s ease;
+  opacity: 0.75;
+}
+
+.bar-col:hover span {
+  opacity: 1;
+  transform: scaleY(1.04);
+}
+
+.bar-col.active-month .bar-active-fill {
+  background: linear-gradient(180deg, #10b981 0%, #153c33 100%);
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+}
+
+.bar-peak-tag {
+  position: absolute;
+  top: 2px;
+  font-size: 8px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #10b981;
+  padding: 1px 4px;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.4);
+  z-index: 3;
 }
 
 .bar-col label {
   font-size: 8.5px;
   color: var(--text-muted);
+  font-weight: 600;
 }
 
-.connecting-curve {
-  width: 70px;
-  height: 60px;
+/* 3-Branch Animated Connecting Curve Hub */
+.connecting-hub-wrapper {
+  width: 74px;
+  height: 140px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.connecting-curve-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.animated-flow-beam {
+  animation: beamFlow 1.8s linear infinite;
+}
+
+.beam-modash {
+  animation-delay: 0s;
+}
+
+.beam-clay {
+  animation-delay: 0.6s;
+}
+
+.beam-apollo {
+  animation-delay: 1.2s;
+}
+
+@keyframes beamFlow {
+  from {
+    stroke-dashoffset: 20;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.chart-pulse-ring {
+  animation: pulseHalo 2s ease-out infinite;
+  transform-origin: center;
+}
+
+@keyframes pulseHalo {
+  0% {
+    r: 4px;
+    opacity: 0.8;
+  }
+  100% {
+    r: 9px;
+    opacity: 0;
+  }
+}
+
+/* Tool Progress Cards Stack */
 .tools-progress-stack {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  min-width: 0;
 }
 
 .tool-row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   background-color: #ffffff;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
-  padding: 9px 12px;
+  padding: 8px 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: all var(--transition-fast);
+}
+
+.tool-row:hover {
+  transform: translateX(3px);
+  border-color: rgba(21, 60, 51, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .tool-logo-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 11px;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-.clay-bg { background-color: #e0f2fe; color: #0284c7; }
-.modash-bg { background-color: #fce7f3; color: #db2777; }
-.apollo-bg { background-color: #fef08a; color: #ca8a04; }
+.tool-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.apollo-img-crop {
+  object-fit: cover;
+  transform: scale(1.12);
+}
+
+.modash-brand-bg {
+  background-color: #FFA2CD;
+  border: 1px solid #ff80b7;
+}
+
+.clay-brand-bg {
+  background-color: #f0f9ff;
+  border: 1px solid #bae6fd;
+  padding: 3px;
+}
+
+.apollo-brand-bg {
+  background-color: #fef08a;
+  border: 1px solid #fde047;
+}
 
 .tool-info {
   flex: 1;
+  min-width: 0;
 }
 
 .tool-meta {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 12px;
   font-weight: 600;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
-.tool-growth {
-  font-size: 10.5px;
-  background-color: #eff6ff;
-  color: #2563eb;
+.tool-name {
+  color: var(--text-heading);
+}
+
+.modash-tag {
+  font-size: 10px;
+  background-color: #fdf2f8;
+  color: #db2777;
+  border: 1px solid #fbcfe8;
   padding: 1px 6px;
   border-radius: var(--radius-full);
+  font-weight: 600;
+}
+
+.clay-tag {
+  font-size: 10px;
+  background-color: #f0f9ff;
+  color: #0284c7;
+  border: 1px solid #bae6fd;
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+}
+
+.apollo-tag {
+  font-size: 10px;
+  background-color: #fefce8;
+  color: #ca8a04;
+  border: 1px solid #fef08a;
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
 }
 
 .tool-progress-track {
   width: 100%;
   height: 5px;
-  background-color: #e5e7eb;
+  background-color: #edf2ee;
   border-radius: var(--radius-full);
   overflow: hidden;
 }
 
 .tool-progress-bar {
   height: 100%;
-  background-color: #cbd5e1;
   border-radius: var(--radius-full);
+  transition: width 0.4s ease;
+}
+
+.modash-bar {
+  background: linear-gradient(90deg, #ff85b8 0%, #ec4899 100%);
+}
+
+.clay-bar {
+  background: linear-gradient(90deg, #38bdf8 0%, #0284c7 100%);
+}
+
+.apollo-bar {
+  background: linear-gradient(90deg, #fde047 0%, #eab308 100%);
 }
 
 /* Card 3: Meta & Google Ads */
 .card-meta-ads {
-  min-height: 270px;
+  min-height: 380px;
 }
 
 .ads-diagram-visual {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 24px;
-}
-
-.ads-top-row {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.ad-platform-badge {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  border: 1px solid var(--border-light);
-  display: flex;
-  align-items: center;
   justify-content: center;
-  background-color: #ffffff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-}
-
-.leads-capture-node {
-  background-color: var(--brand-primary);
-  color: #ffffff;
-  padding: 8px 18px;
-  border-radius: var(--radius-full);
-  display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  box-shadow: 0 0 0 4px rgba(21, 60, 51, 0.12);
-}
-
-.sparkle-icon {
-  color: #a7f3d0;
-}
-
-.ads-connect-lines {
-  display: flex;
-  justify-content: space-between;
-  width: 160px;
-  height: 20px;
-  border-bottom: 1.5px solid #d1d5db;
+  margin-top: 16px;
   position: relative;
-  margin: 6px 0;
 }
 
-.ads-bottom-results {
-  display: flex;
-  gap: 24px;
-  margin-top: 10px;
+.ads-diagram-svg {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  overflow: visible;
+  user-select: none;
 }
 
-.result-icon-box {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  border: 1px solid var(--border-light);
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+/* Traveling Animated Flow Beams */
+@keyframes adsBeamFlow {
+  0% {
+    stroke-dashoffset: 40;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.ads-flow-beam {
+  animation: adsBeamFlow 1.6s linear infinite;
+}
+
+.ads-flow-beam.beam-reverse {
+  animation-direction: reverse;
+}
+
+/* Lead Capture Center Pill Styling & Interaction */
+.lead-capture-node-pill {
+  cursor: pointer;
+}
+
+.lead-capture-node-pill rect {
+  transition: stroke 0.3s ease, stroke-width 0.3s ease, filter 0.3s ease;
+}
+
+.lead-capture-node-pill:hover rect {
+  stroke: #34d399;
+  stroke-width: 2.2px;
+  filter: url(#leadPillHoverShadow);
+}
+
+/* Sparkle Star Twinkle Animation (Opacity pulse only to prevent coordinate displacement) */
+@keyframes sparkleGlow {
+  0%, 100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.pill-sparkle-icon {
+  animation: sparkleGlow 2.5s ease-in-out infinite;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.lead-capture-node-pill:hover .pill-sparkle-icon {
+  opacity: 1;
+  filter: drop-shadow(0 0 5px #a7f3d0);
+}
+
+/* Card hover interactive effects (Smooth border & shadow transition) */
+.diagram-card-node {
+  cursor: pointer;
+}
+
+.diagram-card-node rect {
+  transition: stroke 0.25s ease, filter 0.25s ease;
+}
+
+.diagram-card-node:hover rect {
+  stroke: #94a3b8;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.08));
 }
 
 /* Card 4: Marketing Automation (Bottom Left) */
@@ -443,11 +655,221 @@
   height: 100%;
 }
 
+/* Card 6: Web & Landing Page Development (Flagship Card) */
+.card-web-dev {
+  grid-column: 1 / -1;
+  padding: 36px 36px;
+  background: linear-gradient(135deg, #ffffff 0%, #f6faf8 100%);
+  border: 1px solid var(--border-light);
+}
+
+.webdev-card-split {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.webdev-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--brand-primary);
+  background-color: var(--brand-badge-bg);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: 12px;
+}
+
+.webdev-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+}
+
+.webdev-highlights-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 9px;
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+.webdev-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13.5px;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.webdev-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.tech-badge {
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-light);
+  background-color: #ffffff;
+  color: var(--text-heading);
+  transition: all var(--transition-fast);
+}
+
+.tech-badge:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-primary);
+  box-shadow: 0 3px 10px rgba(21, 60, 51, 0.08);
+}
+
+/* Browser Mockup Window */
+.webdev-browser-mockup {
+  background-color: #111a17;
+  border-radius: 14px;
+  border: 1px solid #233630;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(19, 78, 63, 0.15);
+}
+
+.mockup-browser-header {
+  background-color: #172420;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid #233630;
+}
+
+.mockup-traffic-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.mockup-traffic-dots .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.mockup-traffic-dots .red { background-color: #ff5f56; }
+.mockup-traffic-dots .yellow { background-color: #ffbd2e; }
+.mockup-traffic-dots .green { background-color: #27c93f; }
+
+.mockup-address-bar {
+  flex: 1;
+  background-color: #0c1411;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: #8ba29a;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: monospace;
+}
+
+.mockup-browser-body {
+  padding: 16px;
+}
+
+.mockup-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.mockup-metric-card {
+  background-color: #172420;
+  border: 1px solid #233630;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metric-score {
+  font-size: 16px;
+  font-weight: 800;
+  color: #10b981;
+  letter-spacing: -0.02em;
+}
+
+.metric-label {
+  font-size: 10px;
+  color: #9bb0a8;
+  font-weight: 500;
+}
+
+.mockup-code-preview {
+  background-color: #0c1411;
+  border: 1px solid #233630;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.code-header {
+  background-color: #172420;
+  padding: 6px 12px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #8ba29a;
+  font-family: monospace;
+  border-bottom: 1px solid #233630;
+}
+
+.code-lines {
+  padding: 12px 14px;
+  margin: 0;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: #d1ded9;
+  overflow-x: auto;
+}
+
+.code-keyword { color: #f472b6; font-weight: 600; }
+.code-func { color: #60a5fa; }
+.code-comp { color: #34d399; font-weight: 600; }
+.code-tag { color: #38bdf8; }
+.code-str { color: #fcd34d; }
+
 @media (max-width: 950px) {
   .bento-grid {
     grid-template-columns: 1fr;
   }
-  .card-cold-email, .card-automation, .card-influencer {
+  .card-cold-email, .card-automation, .card-influencer, .card-web-dev {
     grid-column: 1 / -1;
+  }
+  .webdev-card-split {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .leadgen-visual-wrap {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .mini-chart-card {
+    width: 100%;
+  }
+  .connecting-hub-wrapper {
+    display: none;
   }
 }

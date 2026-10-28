@@ -21,7 +21,7 @@ export default function Navbar() {
           <a href="#contact" className="nav-link">Contact</a>
           <a href="#services" className="nav-link services-link">
             Services
-            <span className="nav-badge">New</span>
+
           </a>
         </nav>
 

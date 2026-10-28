@@ -32,14 +32,15 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Column 2: Company Links */}
+          {/* Column 2: Services Links */}
           <div className="footer-col">
-            <h4 className="footer-col-title">Company</h4>
+            <h4 className="footer-col-title">Services</h4>
             <ul className="footer-links-list">
-              <li><a href="#about">About us</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
-              <li><a href="#contact">Contact Us</a></li>
-              <li><a href="#services">Services</a></li>
+              <li><a href="#services">Web Development</a></li>
+              <li><a href="#services">Cold Email Outreach</a></li>
+              <li><a href="#services">Lead Generation</a></li>
+              <li><a href="#services">Meta & Google Ads</a></li>
+              <li><a href="#services">Marketing Automation</a></li>
             </ul>
           </div>
 
@@ -58,7 +59,7 @@ export default function Footer() {
           <div className="footer-col newsletter-col">
             <h4 className="footer-col-title">Newsletter</h4>
             <p className="newsletter-desc">
-              Stay ahead with outreach and lead generation tips that bring real results.
+              Stay ahead with web development, outreach, and conversion tips that bring real results.
             </p>
             <form onSubmit={handleSubmit} className="newsletter-form">
               <input

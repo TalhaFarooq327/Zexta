@@ -37,6 +37,12 @@ const rightReviews = [
     badge: "Verified Client",
   },
   {
+    text: "Zexta rebuilt our website and landing pages in Webflow. Our visitor-to-demo conversion rate tripled in 30 days.",
+    author: "• Marcus Vance",
+    role: "VP Growth, ScaleLab",
+    badge: "3X Conversion",
+  },
+  {
     text: "Their personalized copy and domain warmup saved our sales pipeline. 10/10 execution.",
     author: "• Elena Rostova",
     role: "VP Marketing, NovaCorp",
@@ -191,7 +197,7 @@ export default function Hero() {
 
           {/* Subtitle */}
           <p className="hero-subtitle">
-            We build cold outreach systems, targeted lead lists, and paid ad campaigns that fill your calendar with qualified sales calls every month.
+            We build high-converting websites, cold outreach systems, targeted lead lists, and paid ad campaigns that fill your calendar with qualified sales calls every month.
           </p>
 
           {/* CTA Button */}

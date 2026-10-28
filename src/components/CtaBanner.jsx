@@ -10,7 +10,7 @@ export default function CtaBanner() {
       <div className="container">
         <div className="cta-banner-card">
           <SectionBadge text="Book a call" />
-          
+
           <h2 className="cta-title">
             Join 100+ businesses growing
             <br />
@@ -21,10 +21,10 @@ export default function CtaBanner() {
             Book a free call and get a clear plan for your next 90 days of lead generation.
           </p>
 
-          {/* Embedded subtle partner logos */}
+          {/* Embedded subtle partner logos 
           <div className="cta-tools-wrapper">
             <PartnerLogos title="" />
-          </div>
+          </div> */}
 
           {/* Main Action Button */}
           <div className="cta-button-wrapper">

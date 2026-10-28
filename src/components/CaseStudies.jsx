@@ -10,10 +10,10 @@ import './CaseStudies.css'
 const caseProjects = [
   {
     id: 1,
-    title: 'Influencer Outreach',
-    tags: ['Ecommerce', 'Instagram'],
+    title: 'High-Converting Web & Landing Pages',
+    tags: ['Web Development', 'Next.js', 'Webflow'],
     image: case1Img,
-    alt: 'Influencer Outreach Analytics & Activities'
+    alt: 'High-Converting Web App and Landing Page Redesign'
   },
   {
     id: 2,
@@ -42,21 +42,13 @@ export default function CaseStudies() {
   return (
     <section className="work-section" id="work">
       <div className="container">
-        {/* Header with right CTA */}
-        <div className="work-header">
-          <div className="work-header-left">
-            <SectionBadge text="Our Work" />
-            <h2 className="section-title">How we've helped other businesses.</h2>
-            <p className="section-desc">
-              See how we turned outreach challenges into steady streams of qualified leads.
-            </p>
-          </div>
-          <div className="work-header-right">
-            <a href="#all-projects" className="btn btn-secondary work-cta-btn">
-              <span>View all projects</span>
-              <ArrowUpRight size={15} />
-            </a>
-          </div>
+        {/* Centered Section Header */}
+        <div className="section-header-center">
+          <SectionBadge text="Our Work" />
+          <h2 className="section-title">How we've helped other businesses.</h2>
+          <p className="section-desc">
+            See how we turned outreach challenges into steady streams of qualified leads.
+          </p>
         </div>
 
         {/* 2x2 Grid of Case Studies */}
@@ -76,6 +68,14 @@ export default function CaseStudies() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Bottom CTA Button */}
+        <div className="work-bottom-cta">
+          <a href="#all-projects" className="btn btn-secondary work-cta-btn">
+            <span>View all projects</span>
+            <ArrowUpRight size={15} />
+          </a>
         </div>
       </div>
     </section>

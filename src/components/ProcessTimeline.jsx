@@ -37,21 +37,21 @@ export default function ProcessTimeline() {
   return (
     <section className="process-section" id="process">
       <div className="container">
-        <div className="process-split-layout">
-          {/* Left Column: Heading */}
-          <div className="process-left-sticky">
-            <SectionBadge text="Our Process" />
-            <h2 className="section-title">
-              A proven and simple
-              <br />
-              outreach process.
-            </h2>
-            <p className="section-desc">
-              See how we take you from zero to a working lead generation system.
-            </p>
-          </div>
+        {/* Centered Section Header */}
+        <div className="section-header-center">
+          <SectionBadge text="Our Process" />
+          <h2 className="section-title">
+            A proven and simple
+            <br />
+            outreach process.
+          </h2>
+          <p className="section-desc">
+            See how we take you from zero to a working lead generation system.
+          </p>
+        </div>
 
-          {/* Right Column: Timeline Steps */}
+        {/* Timeline Steps */}
+        <div className="process-timeline-wrap">
           <div className="process-right-timeline">
             {processSteps.map((item, idx) => (
               <div
